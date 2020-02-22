@@ -24,6 +24,6 @@ def get_average_value(column_name: str, time_offset: int):
 
 def get_most_recent_value(column_name: str):
 
-    query = f"SELECT date_time, {column_name} FROM sensors"
+    query = f"SELECT date_time, {column_name} FROM sensors ORDER BY date_time DESC"
 
     return execute_query(query)
