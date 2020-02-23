@@ -485,6 +485,7 @@ class Ui_Form(object):
 
     def update_exhaust_state(self):
         state = database.get_output_state("exhaust_fan")[0]
+        print(f"$$${state}")
         if state == "True":
             self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
