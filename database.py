@@ -30,5 +30,5 @@ def get_most_recent_value(column_name: str):
 
 def get_output_state(output_name: str):
 
-    query = f"SELECT output_state FROM output_states WHERE output_name = '{output_name}'"
+    query = f"SELECT date_time, output_state FROM output_states WHERE output_name = '{output_name}'"
     return execute_query(query)

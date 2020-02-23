@@ -468,17 +468,37 @@ class Ui_Form(object):
 
     def update_lights_4x4_state(self):
 
-        state = database.get_output_state("lights_4x4")[0]
-        if state == "True":
+        query_result = database.get_output_state("lights_4x4")
+        state = query_result[1]
+        timestamp = query_result[0]
+
+        now = datetime.now()
+        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+        time_diff = now - timestamp
+
+        if time_diff.days == 0 and time_diff.seconds < 30:
+            self.state_indicator_4x4.setStyleSheet("background-color:black;border-radius:4px;")
+
+        elif state == "True":
             self.state_indicator_4x4.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
         else:
             self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
     def update_lights_4x8_state(self):
-        
-        state = database.get_output_state("lights_4x8")[0]
-        if state == "True":
+
+        query_result = database.get_output_state("lights_4x8")
+        state = query_result[1]
+        timestamp = query_result[0]
+
+        now = datetime.now()
+        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+        time_diff = now - timestamp
+
+        if time_diff.days == 0 and time_diff.seconds < 30:
+            self.state_indicator_4x8.setStyleSheet("background-color:black;border-radius:4px;")
+
+        elif state == "True":
             self.state_indicator_4x8.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
         else:
@@ -486,7 +506,16 @@ class Ui_Form(object):
 
     def update_exhaust_state(self):
 
-        state = database.get_output_state("exhaust_fan")[0]
+        query_result = database.get_output_state("exhaust_fan")
+        state = query_result[1]
+        timestamp = query_result[0]
+
+        now = datetime.now()
+        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+        time_diff = now - timestamp
+
+        if time_diff.days == 0 and time_diff.seconds < 30:
+            self.state_indicator_blower.setStyleSheet("background-color:black;border-radius:4px;")
         if state == "True":
             self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
