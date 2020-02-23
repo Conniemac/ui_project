@@ -32,24 +32,3 @@ def get_output_state(output_name: str):
 
     query = f"SELECT output_state FROM output_states WHERE output_name = '{output_name}'"
     return execute_query(query)
-# query1 = "CREATE TABLE output_states (id INTEGER PRIMARY KEY, output_name TEXT, output_state TEXT);"
-# query2 = "INSERT INTO output_states (output_name, output_state) VALUES ('lights_4x8', 'False');"
-# query3 = "INSERT INTO output_states (output_name, output_state) VALUES ('lights_4x4', 'False');"
-# query4 = "INSERT INTO output_states (output_name, output_state) VALUES ('exhaust_fan', 'False');"
-#
-# queries = ["UPDATE output_states SET output_state = 'True' WHERE output_name = 'lights_4x4'"]
-#
-# for query in queries:
-#     connection = sqlite3.connect(database_name)
-#     cursor = connection.cursor()
-#
-#     # Execute the query
-#     cursor.execute(query)
-#
-#     results = cursor.fetchall()
-#     for result in results:
-#         print(result)
-#
-#     connection.commit()
-#     cursor.close()
-#     connection.close()

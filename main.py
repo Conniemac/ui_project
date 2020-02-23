@@ -476,6 +476,7 @@ class Ui_Form(object):
             self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
     def update_lights_4x8_state(self):
+        
         state = database.get_output_state("lights_4x8")[0]
         if state == "True":
             self.state_indicator_4x8.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
@@ -484,8 +485,8 @@ class Ui_Form(object):
             self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
     def update_exhaust_state(self):
+
         state = database.get_output_state("exhaust_fan")[0]
-        print(f"$$${state}")
         if state == "True":
             self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
@@ -493,9 +494,6 @@ class Ui_Form(object):
             self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
 if __name__ == "__main__":
-
-
-
 
     import sys
     app = QtWidgets.QApplication(sys.argv)
