@@ -469,7 +469,6 @@ class Ui_Form(object):
     def update_lights_4x4_state(self):
 
         query_result = database.get_output_state("lights_4x4")
-        print(query_result)
         state = query_result[1]
         timestamp = query_result[0]
 
