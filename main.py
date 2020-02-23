@@ -516,7 +516,7 @@ class Ui_Form(object):
 
         if time_diff.days >= 0 and time_diff.seconds > 30:
             self.state_indicator_blower.setStyleSheet("background-color:black;border-radius:4px;")
-        if state == "True":
+        elif state == "True":
             self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
 
         else:
