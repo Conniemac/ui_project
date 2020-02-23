@@ -1,4 +1,5 @@
 import sqlite3
+import time
 from datetime import datetime
 
 from util import build_now_string, build_past_string
@@ -9,10 +10,23 @@ def execute_query(query):
     connection = sqlite3.connect(database_name)
     cursor = connection.cursor()
 
-    # Execute the query
-    cursor.execute(query)
+    result = None
+    for try_count in range(0, 3):
 
-    return cursor.fetchone()
+        # Execute the query
+        try:
+            cursor.execute(query)
+            result = cursor.fetchone()
+            break
+
+        except sqlite3.OperationalError:
+
+            time.sleep(.25)
+
+    cursor.close()
+    connection.close()
+
+    return result
 
 def get_average_value(column_name: str, time_offset: int):
     now = datetime.now()
