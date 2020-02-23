@@ -8,7 +8,7 @@
 import sqlite3
 from datetime import datetime, timedelta
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, Qt
 from PyQt5.QtCore import QTimer
 
 import database
@@ -199,22 +199,66 @@ class Ui_Form(object):
         self.horizontalLayout_2.addLayout(self.verticalLayout_4)
         self.verticalLayout_9.addLayout(self.horizontalLayout_2)
         self.horizontalLayout_3.addWidget(self.co2_frame)
-        self.frame_6 = QtWidgets.QFrame(self.verticalLayoutWidget)
-        self.frame_6.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.frame_6.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.frame_6.setObjectName("frame_6")
-        self.label = QtWidgets.QLabel(self.frame_6)
-        self.label.setGeometry(QtCore.QRect(20, 60, 141, 20))
+        self.frame_2 = QtWidgets.QFrame(self.verticalLayoutWidget)
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.frame_2)
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(-1, -1, 181, 175))
+        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
+        self.verticalLayout_12.setContentsMargins(10, 10, 10, 70)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.label = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.label.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label.setObjectName("label")
-        self.horizontalLayout_3.addWidget(self.frame_6)
+        self.verticalLayout_12.addWidget(self.label)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setContentsMargins(10, -1, -1, -1)
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.state_indicator_label_4x4 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.state_indicator_label_4x4.setObjectName("state_indicator_label_4x4")
+        self.verticalLayout_13.addWidget(self.state_indicator_label_4x4)
+        self.state_indicator_label_4x8 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.state_indicator_label_4x8.setObjectName("state_indicator_label_4x8")
+        self.verticalLayout_13.addWidget(self.state_indicator_label_4x8)
+        self.state_indicator_label_blower = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        self.state_indicator_label_blower.setObjectName("state_indicator_label_blower")
+        self.verticalLayout_13.addWidget(self.state_indicator_label_blower)
+        self.horizontalLayout_6.addLayout(self.verticalLayout_13)
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.state_indicator_4x4 = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
+        self.state_indicator_4x4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.state_indicator_4x4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.state_indicator_4x4.setObjectName("state_indicator_4x4")
+        self.verticalLayout_15.addWidget(self.state_indicator_4x4)
+        self.state_indicator_4x8 = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_4x8.setMinimumSize(QtCore.QSize(0, 11))
+        self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
+        self.state_indicator_4x8.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.state_indicator_4x8.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.state_indicator_4x8.setObjectName("state_indicator_4x8")
+        self.verticalLayout_15.addWidget(self.state_indicator_4x8)
+        self.state_indicator_blower = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
+        self.state_indicator_blower.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.state_indicator_blower.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.state_indicator_blower.setObjectName("state_indicator_blower")
+        self.verticalLayout_15.addWidget(self.state_indicator_blower)
+        self.horizontalLayout_6.addLayout(self.verticalLayout_15)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_6)
+        self.horizontalLayout_3.addWidget(self.frame_2)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
-
-        self._timer_painter = QTimer(Form)
-        self._timer_painter.start(1000)
-        self._timer_painter.timeout.connect(self.update_values)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self._timer_painter = QTimer(Form)
+        self._timer_painter.start(1000)
+        self._timer_painter.timeout.connect(self.update_values)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -246,13 +290,17 @@ class Ui_Form(object):
         self.co2_6hour_avg.setText(_translate("Form", "0"))
         self.co2_12hour_avg.setText(_translate("Form", "0"))
         self.co2_24hour_avg.setText(_translate("Form", "0"))
-        self.label.setText(_translate("Form", "Auto-Grow Averages"))
+        self.label.setText(_translate("Form", "Other States"))
+        self.state_indicator_label_4x4.setText(_translate("Form", "4x4*"))
+        self.state_indicator_label_4x8.setText(_translate("Form", "4x8"))
+        self.state_indicator_label_blower.setText(_translate("Form", "blower"))
 
     def update_values(self):
 
         self.update_temperature()
         self.update_humidity()
         self.update_co2()
+        self.update_output_states()
 
     # Updating temperature values
     def update_temperature(self):
@@ -289,17 +337,32 @@ class Ui_Form(object):
 
     def update_temperature_6hour(self):
 
-        value = round(database.get_average_value("temperature", 6), 2)
+        value = database.get_average_value("temperature", 6)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.temperature_6hour_avg.setText(str(value))
 
     def update_temperature_12hour(self):
 
-        value = round(database.get_average_value("temperature", 12), 2)
+        value = database.get_average_value("temperature", 12)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.temperature_12hour_avg.setText(str(value))
 
     def update_temperature_24hour(self):
 
-        value = round(database.get_average_value("temperature", 24), 2)
+        value = database.get_average_value("temperature", 24)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.temperature_24hour_avg.setText(str(value))
 
 
@@ -321,17 +384,32 @@ class Ui_Form(object):
 
     def update_humidity_6hour(self):
 
-        value = round(database.get_average_value("humidity", 6), 2)
+        value = database.get_average_value("humidity", 6)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.humidity_6hour_avg.setText(str(value))
 
     def update_humidity_12hour(self):
 
-        value = round(database.get_average_value("humidity", 12), 2)
+        value = database.get_average_value("humidity", 12)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.humidity_12hour_avg.setText(str(value))
 
     def update_humidity_24hour(self):
 
-        value = round(database.get_average_value("humidity", 24), 2)
+        value = database.get_average_value("humidity", 24)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.humidity_24hour_avg.setText(str(value))
 
 
@@ -353,21 +431,71 @@ class Ui_Form(object):
 
     def update_co2_6hour(self):
 
-        value = round(database.get_average_value("co2", 6), 2)
+        value = database.get_average_value("co2", 6)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.co2_6hour_avg.setText(str(value))
 
     def update_co2_12hour(self):
 
-        value = round(database.get_average_value("co2", 12), 2)
+        value = database.get_average_value("co2", 12)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.co2_12hour_avg.setText(str(value))
 
     def update_co2_24hour(self):
 
-        value = round(database.get_average_value("co2", 24), 2)
+        value = database.get_average_value("co2", 24)
+        if value is not None:
+            value = round(value, 2)
+        else:
+            value = "Invalid"
+
         self.co2_24hour_avg.setText(str(value))
 
 
+    def update_output_states(self):
+
+        self.update_lights_4x4_state()
+        self.update_lights_4x8_state()
+        self.update_exhaust_state()
+
+    def update_lights_4x4_state(self):
+
+        state = database.get_output_state("lights_4x4")[0]
+        if state == "True":
+            self.state_indicator_4x4.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+        else:
+            self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+
+    def update_lights_4x8_state(self):
+        state = database.get_output_state("lights_4x8")[0]
+        if state == "True":
+            self.state_indicator_4x8.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+        else:
+            self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+
+    def update_exhaust_state(self):
+        state = database.get_output_state("exhaust_fan")[0]
+        if state == "True":
+            self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+        else:
+            self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+
 if __name__ == "__main__":
+
+
+
+
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Form = QtWidgets.QWidget()
