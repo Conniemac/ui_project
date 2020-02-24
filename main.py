@@ -567,6 +567,7 @@ class Ui_Form(object):
     def update_heater_state(self):
 
         query_result = database.get_output_state("heater")
+        print(f"heater query result = {query_result}")
         state = query_result[1]
         timestamp = query_result[0]
 
@@ -585,6 +586,7 @@ class Ui_Form(object):
     def update_co2_state(self):
 
         query_result = database.get_output_state("co2")
+        print(f"co2 query result = {query_result}")
         state = query_result[1]
         timestamp = query_result[0]
 
