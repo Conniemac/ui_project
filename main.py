@@ -16,7 +16,7 @@ import database
 
 class Ui_Form(object):
     def setupUi(self, Form):
-        Form.setObjectName("Form")
+        Form.setObjectName("Auto-Grow Averages")
         Form.resize(400, 310)
         Form.setMinimumSize(QtCore.QSize(400, 310))
         Form.setMaximumSize(QtCore.QSize(400, 310))
