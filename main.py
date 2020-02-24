@@ -603,7 +603,6 @@ class Ui_Form(object):
     def update_co2_state(self):
 
         query_result = database.get_output_state("co2")
-        print(f"co2 query result = {query_result}")
         if query_result is not None:
 
             state = query_result[1]

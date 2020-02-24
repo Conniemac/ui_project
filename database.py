@@ -6,6 +6,7 @@ from util import build_now_string, build_past_string
 
 database_name = "test_data/sensors.db"
 
+
 def execute_query(query):
     connection = sqlite3.connect(database_name)
     cursor = connection.cursor()
