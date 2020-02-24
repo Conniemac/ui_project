@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Desktop/auto_grow_ui_v1.ui'
+# AutoGrow_Averages implementation generated from reading ui file 'Desktop/auto_grow_ui_v1.ui'
 #
 # Created by: PyQt5 UI code generator 5.14.1
 #
@@ -14,13 +14,13 @@ from PyQt5.QtCore import QTimer
 import database
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Auto-Grow Averages")
-        Form.resize(400, 310)
-        Form.setMinimumSize(QtCore.QSize(400, 310))
-        Form.setMaximumSize(QtCore.QSize(400, 310))
-        self.frame = QtWidgets.QFrame(Form)
+class Ui_AutoGrow_Averages(object):
+    def setupUi(self, AutoGrow_Averages):
+        AutoGrow_Averages.setObjectName("Auto-Grow Averages")
+        AutoGrow_Averages.resize(400, 310)
+        AutoGrow_Averages.setMinimumSize(QtCore.QSize(400, 310))
+        AutoGrow_Averages.setMaximumSize(QtCore.QSize(400, 310))
+        self.frame = QtWidgets.QFrame(AutoGrow_Averages)
         self.frame.setGeometry(QtCore.QRect(0, 0, 401, 311))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -294,48 +294,48 @@ class Ui_Form(object):
         self.horizontalLayout_3.addWidget(self.frame_2)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
-        self._timer_painter = QTimer(Form)
+        self.retranslateUi(AutoGrow_Averages)
+        QtCore.QMetaObject.connectSlotsByName(AutoGrow_Averages)
+        self._timer_painter = QTimer(AutoGrow_Averages)
         self._timer_painter.start(1000)
         self._timer_painter.timeout.connect(self.update_values)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, AutoGrow_Averages):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.temperature_main_label.setText(_translate("Form", "Temperature"))
-        self.temperature_current_label.setText(_translate("Form", "Current:"))
-        self.temperature_6hour_label.setText(_translate("Form", "6 hr avg:"))
-        self.temperature_12hour_label.setText(_translate("Form", "12 hr avg:"))
-        self.temperature_24hour_label.setText(_translate("Form", "24 hr avg:"))
-        self.temperature_current.setText(_translate("Form", "0"))
-        self.temperature_6hour_avg.setText(_translate("Form", "0"))
-        self.temperature_12hour_avg.setText(_translate("Form", "0"))
-        self.temperature_24hour_avg.setText(_translate("Form", "0"))
-        self.humidity_main_label.setText(_translate("Form", "Humidity"))
-        self.humidity_current_label.setText(_translate("Form", "Current:"))
-        self.humidity_6hour_label.setText(_translate("Form", "6 hr avg:"))
-        self.humidity_12hour_label.setText(_translate("Form", "12 hr avg:"))
-        self.humidity_24hour_label.setText(_translate("Form", "24 hr avg:"))
-        self.humidity_current.setText(_translate("Form", "0"))
-        self.humidity_6hour_avg.setText(_translate("Form", "0"))
-        self.humidity_12hour_avg.setText(_translate("Form", "0"))
-        self.humidity_24hour_avg.setText(_translate("Form", "0"))
-        self.co2_main_label.setText(_translate("Form", "CO2"))
-        self.co2_current_label.setText(_translate("Form", "Current:"))
-        self.co2_6hour_label.setText(_translate("Form", "6 hr avg:"))
-        self.co2_12hour_label.setText(_translate("Form", "12 hr avg:"))
-        self.co2_24hour_label.setText(_translate("Form", "24 hr avg:"))
-        self.co2_current.setText(_translate("Form", "0"))
-        self.co2_6hour_avg.setText(_translate("Form", "0"))
-        self.co2_12hour_avg.setText(_translate("Form", "0"))
-        self.co2_24hour_avg.setText(_translate("Form", "0"))
-        self.label.setText(_translate("Form", "Other States"))
-        self.state_indicator_label_4x4.setText(_translate("Form", "4x4*"))
-        self.state_indicator_label_4x8.setText(_translate("Form", "4x8"))
-        self.state_indicator_label_blower.setText(_translate("Form", "Blower"))
-        self.label_2.setText(_translate("Form", "CO2"))
-        self.label_3.setText(_translate("Form", "Heater"))
+        AutoGrow_Averages.setWindowTitle(_translate("AutoGrow Averages", "AutoGrow Averages"))
+        self.temperature_main_label.setText(_translate("AutoGrow_Averages", "Temperature"))
+        self.temperature_current_label.setText(_translate("AutoGrow_Averages", "Current:"))
+        self.temperature_6hour_label.setText(_translate("AutoGrow_Averages", "6 hr avg:"))
+        self.temperature_12hour_label.setText(_translate("AutoGrow_Averages", "12 hr avg:"))
+        self.temperature_24hour_label.setText(_translate("AutoGrow_Averages", "24 hr avg:"))
+        self.temperature_current.setText(_translate("AutoGrow_Averages", "0"))
+        self.temperature_6hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.temperature_12hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.temperature_24hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.humidity_main_label.setText(_translate("AutoGrow_Averages", "Humidity"))
+        self.humidity_current_label.setText(_translate("AutoGrow_Averages", "Current:"))
+        self.humidity_6hour_label.setText(_translate("AutoGrow_Averages", "6 hr avg:"))
+        self.humidity_12hour_label.setText(_translate("AutoGrow_Averages", "12 hr avg:"))
+        self.humidity_24hour_label.setText(_translate("AutoGrow_Averages", "24 hr avg:"))
+        self.humidity_current.setText(_translate("AutoGrow_Averages", "0"))
+        self.humidity_6hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.humidity_12hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.humidity_24hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.co2_main_label.setText(_translate("AutoGrow_Averages", "CO2"))
+        self.co2_current_label.setText(_translate("AutoGrow_Averages", "Current:"))
+        self.co2_6hour_label.setText(_translate("AutoGrow_Averages", "6 hr avg:"))
+        self.co2_12hour_label.setText(_translate("AutoGrow_Averages", "12 hr avg:"))
+        self.co2_24hour_label.setText(_translate("AutoGrow_Averages", "24 hr avg:"))
+        self.co2_current.setText(_translate("AutoGrow_Averages", "0"))
+        self.co2_6hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.co2_12hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.co2_24hour_avg.setText(_translate("AutoGrow_Averages", "0"))
+        self.label.setText(_translate("AutoGrow_Averages", "Other States"))
+        self.state_indicator_label_4x4.setText(_translate("AutoGrow_Averages", "4x4*"))
+        self.state_indicator_label_4x8.setText(_translate("AutoGrow_Averages", "4x8"))
+        self.state_indicator_label_blower.setText(_translate("AutoGrow_Averages", "Blower"))
+        self.label_2.setText(_translate("AutoGrow_Averages", "CO2"))
+        self.label_3.setText(_translate("AutoGrow_Averages", "Heater"))
 
     def update_values(self):
 
@@ -627,8 +627,8 @@ if __name__ == "__main__":
 
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
+    AutoGrow_Averages = QtWidgets.QWidget()
+    ui = Ui_AutoGrow_Averages()
+    ui.setupUi(AutoGrow_Averages)
+    AutoGrow_Averages.show()
     sys.exit(app.exec_())
