@@ -507,6 +507,8 @@ class Ui_Form(object):
         self.update_lights_4x4_state()
         self.update_lights_4x8_state()
         self.update_exhaust_state()
+        self.update_co2_state()
+        self.update_heater_state()
 
     def update_lights_4x4_state(self):
 
