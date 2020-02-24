@@ -34,7 +34,7 @@ def get_average_value(column_name: str, time_offset: int):
     past_string = build_past_string(now, time_offset)
     query = f"SELECT avg({column_name}) FROM sensors WHERE date_time BETWEEN '{past_string}' AND '{now_string}'"
 
-    return execute_query(query)[0]
+    return execute_query(query)[0] if not None else None
 
 def get_most_recent_value(column_name: str):
 
