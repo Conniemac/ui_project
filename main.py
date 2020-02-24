@@ -513,96 +513,116 @@ class Ui_Form(object):
     def update_lights_4x4_state(self):
 
         query_result = database.get_output_state("lights_4x4")
-        state = query_result[1]
-        timestamp = query_result[0]
+        if query_result is not None:
+            state = query_result[1]
+            timestamp = query_result[0]
 
-        now = datetime.now()
-        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
-        time_diff = now - timestamp
+            now = datetime.now()
+            timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+            time_diff = now - timestamp
 
-        if time_diff.days >= 0 and time_diff.seconds > 30:
-            self.state_indicator_4x4.setStyleSheet("background-color:black;border-radius:4px;")
+            if time_diff.days >= 0 and time_diff.seconds > 30:
+                self.state_indicator_4x4.setStyleSheet("background-color:black;border-radius:4px;")
 
-        elif state == "True":
-            self.state_indicator_4x4.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+            elif state == "True":
+                self.state_indicator_4x4.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+            else:
+                self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
         else:
-            self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+            self.state_indicator_4x4.setStyleSheet("background-color:rgb(255, 246, 18);border-radius:4px;")
 
     def update_lights_4x8_state(self):
 
         query_result = database.get_output_state("lights_4x8")
-        state = query_result[1]
-        timestamp = query_result[0]
+        if query_result is not None:
+            state = query_result[1]
+            timestamp = query_result[0]
 
-        now = datetime.now()
-        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
-        time_diff = now - timestamp
+            now = datetime.now()
+            timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+            time_diff = now - timestamp
 
-        if time_diff.days >= 0 and time_diff.seconds > 30:
-            self.state_indicator_4x8.setStyleSheet("background-color:black;border-radius:4px;")
+            if time_diff.days >= 0 and time_diff.seconds > 30:
+                self.state_indicator_4x8.setStyleSheet("background-color:black;border-radius:4px;")
 
-        elif state == "True":
-            self.state_indicator_4x8.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+            elif state == "True":
+                self.state_indicator_4x8.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+            else:
+                self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
         else:
-            self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+            self.state_indicator_4x8.setStyleSheet("background-color:rgb(255, 246, 18);border-radius:4px;")
 
     def update_exhaust_state(self):
 
         query_result = database.get_output_state("exhaust_fan")
-        state = query_result[1]
-        timestamp = query_result[0]
+        if query_result is not None:
+            state = query_result[1]
+            timestamp = query_result[0]
 
-        now = datetime.now()
-        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
-        time_diff = now - timestamp
+            now = datetime.now()
+            timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+            time_diff = now - timestamp
 
-        if time_diff.days >= 0 and time_diff.seconds > 30:
-            self.state_indicator_blower.setStyleSheet("background-color:black;border-radius:4px;")
-        elif state == "True":
-            self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+            if time_diff.days >= 0 and time_diff.seconds > 30:
+                self.state_indicator_blower.setStyleSheet("background-color:black;border-radius:4px;")
+            elif state == "True":
+                self.state_indicator_blower.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+            else:
+                self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
         else:
-            self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+            self.state_indicator_blower.setStyleSheet("background-color:rgb(255, 246, 18);border-radius:4px;")
 
     def update_heater_state(self):
 
         query_result = database.get_output_state("heater")
-        print(f"heater query result = {query_result}")
-        state = query_result[1]
-        timestamp = query_result[0]
+        if query_result is not None:
+            state = query_result[1]
+            timestamp = query_result[0]
 
-        now = datetime.now()
-        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
-        time_diff = now - timestamp
+            now = datetime.now()
+            timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+            time_diff = now - timestamp
 
-        if time_diff.days >= 0 and time_diff.seconds > 30:
-            self.state_indicator_heater.setStyleSheet("background-color:black;border-radius:4px;")
-        elif state == "True":
-            self.state_indicator_heater.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+            if time_diff.days >= 0 and time_diff.seconds > 30:
+                self.state_indicator_heater.setStyleSheet("background-color:black;border-radius:4px;")
+            elif state == "True":
+                self.state_indicator_heater.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+            else:
+                self.state_indicator_heater.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
         else:
-            self.state_indicator_heater.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+            self.state_indicator_heater.setStyleSheet("background-color:rgb(255, 246, 18);border-radius:4px;")
 
     def update_co2_state(self):
 
         query_result = database.get_output_state("co2")
         print(f"co2 query result = {query_result}")
-        state = query_result[1]
-        timestamp = query_result[0]
+        if query_result is not None:
 
-        now = datetime.now()
-        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
-        time_diff = now - timestamp
+            state = query_result[1]
+            timestamp = query_result[0]
 
-        if time_diff.days >= 0 and time_diff.seconds > 30:
-            self.state_indicator_co2.setStyleSheet("background-color:black;border-radius:4px;")
-        elif state == "True":
-            self.state_indicator_co2.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+            now = datetime.now()
+            timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+            time_diff = now - timestamp
+
+            if time_diff.days >= 0 and time_diff.seconds > 30:
+                self.state_indicator_co2.setStyleSheet("background-color:black;border-radius:4px;")
+            elif state == "True":
+                self.state_indicator_co2.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+            else:
+                self.state_indicator_co2.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
         else:
-            self.state_indicator_co2.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+            self.state_indicator_co2.setStyleSheet("background-color:rgb(255, 246, 18);border-radius:4px;")
 
 if __name__ == "__main__":
 
