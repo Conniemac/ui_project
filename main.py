@@ -204,7 +204,7 @@ class Ui_Form(object):
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(self.frame_2)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(-1, -1, 181, 175))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(-1, -1, 181, 224))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_12.setContentsMargins(10, 10, 10, 70)
@@ -214,41 +214,81 @@ class Ui_Form(object):
         self.label.setObjectName("label")
         self.verticalLayout_12.addWidget(self.label)
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_6.setContentsMargins(10, -1, -1, -1)
+        self.horizontalLayout_6.setContentsMargins(10, -1, -1, 20)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_13.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.state_indicator_label_4x4 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.state_indicator_label_4x4.setFont(font)
         self.state_indicator_label_4x4.setObjectName("state_indicator_label_4x4")
         self.verticalLayout_13.addWidget(self.state_indicator_label_4x4)
         self.state_indicator_label_4x8 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.state_indicator_label_4x8.setFont(font)
         self.state_indicator_label_4x8.setObjectName("state_indicator_label_4x8")
         self.verticalLayout_13.addWidget(self.state_indicator_label_4x8)
         self.state_indicator_label_blower = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.state_indicator_label_blower.setFont(font)
         self.state_indicator_label_blower.setObjectName("state_indicator_label_blower")
         self.verticalLayout_13.addWidget(self.state_indicator_label_blower)
+        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_13.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget_2)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_13.addWidget(self.label_3)
         self.horizontalLayout_6.addLayout(self.verticalLayout_13)
         self.verticalLayout_15 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_15.setContentsMargins(-1, 2, -1, 2)
+        self.verticalLayout_15.setSpacing(11)
         self.verticalLayout_15.setObjectName("verticalLayout_15")
         self.state_indicator_4x4 = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_4x4.setMinimumSize(QtCore.QSize(0, 6))
         self.state_indicator_4x4.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
         self.state_indicator_4x4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.state_indicator_4x4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.state_indicator_4x4.setObjectName("state_indicator_4x4")
         self.verticalLayout_15.addWidget(self.state_indicator_4x4)
         self.state_indicator_4x8 = QtWidgets.QFrame(self.verticalLayoutWidget_2)
-        self.state_indicator_4x8.setMinimumSize(QtCore.QSize(0, 11))
+        self.state_indicator_4x8.setMinimumSize(QtCore.QSize(0, 6))
         self.state_indicator_4x8.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
         self.state_indicator_4x8.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.state_indicator_4x8.setFrameShadow(QtWidgets.QFrame.Raised)
         self.state_indicator_4x8.setObjectName("state_indicator_4x8")
         self.verticalLayout_15.addWidget(self.state_indicator_4x8)
         self.state_indicator_blower = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_blower.setMinimumSize(QtCore.QSize(0, 6))
         self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
         self.state_indicator_blower.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.state_indicator_blower.setFrameShadow(QtWidgets.QFrame.Raised)
         self.state_indicator_blower.setObjectName("state_indicator_blower")
         self.verticalLayout_15.addWidget(self.state_indicator_blower)
+        self.state_indicator_co2 = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_co2.setMinimumSize(QtCore.QSize(0, 6))
+        self.state_indicator_co2.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
+        self.state_indicator_co2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.state_indicator_co2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.state_indicator_co2.setObjectName("state_indicator_co2")
+        self.verticalLayout_15.addWidget(self.state_indicator_co2)
+        self.state_indicator_heater = QtWidgets.QFrame(self.verticalLayoutWidget_2)
+        self.state_indicator_heater.setMinimumSize(QtCore.QSize(0, 6))
+        self.state_indicator_heater.setStyleSheet("background-color:rgb(252, 0, 9);border-radius: 4px;")
+        self.state_indicator_heater.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.state_indicator_heater.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.state_indicator_heater.setObjectName("state_indicator_heater")
+        self.verticalLayout_15.addWidget(self.state_indicator_heater)
         self.horizontalLayout_6.addLayout(self.verticalLayout_15)
         self.verticalLayout_12.addLayout(self.horizontalLayout_6)
         self.horizontalLayout_3.addWidget(self.frame_2)
@@ -293,7 +333,9 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Other States"))
         self.state_indicator_label_4x4.setText(_translate("Form", "4x4*"))
         self.state_indicator_label_4x8.setText(_translate("Form", "4x8"))
-        self.state_indicator_label_blower.setText(_translate("Form", "blower"))
+        self.state_indicator_label_blower.setText(_translate("Form", "Blower"))
+        self.label_2.setText(_translate("Form", "CO2"))
+        self.label_3.setText(_translate("Form", "Heater"))
 
     def update_values(self):
 
@@ -521,6 +563,42 @@ class Ui_Form(object):
 
         else:
             self.state_indicator_blower.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+
+    def update_heater_state(self):
+
+        query_result = database.get_output_state("heater")
+        state = query_result[1]
+        timestamp = query_result[0]
+
+        now = datetime.now()
+        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+        time_diff = now - timestamp
+
+        if time_diff.days >= 0 and time_diff.seconds > 30:
+            self.state_indicator_heater.setStyleSheet("background-color:black;border-radius:4px;")
+        elif state == "True":
+            self.state_indicator_heater.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+        else:
+            self.state_indicator_heater.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
+
+    def update_co2_state(self):
+
+        query_result = database.get_output_state("co2")
+        state = query_result[1]
+        timestamp = query_result[0]
+
+        now = datetime.now()
+        timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
+        time_diff = now - timestamp
+
+        if time_diff.days >= 0 and time_diff.seconds > 30:
+            self.state_indicator_co2.setStyleSheet("background-color:black;border-radius:4px;")
+        elif state == "True":
+            self.state_indicator_co2.setStyleSheet("background-color:rgb(76, 255, 35);border-radius:4px;")
+
+        else:
+            self.state_indicator_co2.setStyleSheet("background-color:rgb(252, 0, 9);border-radius:4px;")
 
 if __name__ == "__main__":
 
