@@ -297,7 +297,7 @@ class Ui_AutoGrow_Averages(object):
         self.retranslateUi(AutoGrow_Averages)
         QtCore.QMetaObject.connectSlotsByName(AutoGrow_Averages)
         self._timer_painter = QTimer(AutoGrow_Averages)
-        self._timer_painter.start(1000)
+        self._timer_painter.start(5000)
         self._timer_painter.timeout.connect(self.update_values)
 
     def retranslateUi(self, AutoGrow_Averages):
