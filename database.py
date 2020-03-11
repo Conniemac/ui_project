@@ -4,7 +4,8 @@ from datetime import datetime
 
 from util import build_now_string, build_past_string
 
-database_name = "test_data/sensors.db"
+test_database_name = "test_data/sensors.db"
+database_name = "../automation_framework_python/framework/database/databases/sensors.db"
 
 
 def execute_query(query):

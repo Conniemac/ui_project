@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 import sqlite3
 from datetime import datetime, timedelta
+from typing import Union
 
 from PyQt5 import QtCore, QtGui, QtWidgets, Qt
 from PyQt5.QtCore import QTimer
@@ -352,7 +353,14 @@ class Ui_AutoGrow_Averages(object):
         self.update_temperature_12hour()
         self.update_temperature_24hour()
 
-    def validate_sensor_value(self, timestamp, sensor_value):
+    def validate_sensor_value(self, query_result):
+
+        if query_result is not None:
+            timestamp = query_result[0]
+            sensor_value = query_result[1]
+
+        else:
+            return "Invalid"
 
         reading_timestamp = datetime.strptime(timestamp, "%m/%d/%Y %H:%M:%S")
         now = datetime.now()
@@ -361,7 +369,7 @@ class Ui_AutoGrow_Averages(object):
         if sensor_value is not None and time_since_last_reading.days == 0 and \
                 time_since_last_reading.seconds <= 30:
 
-            result = str(round(sensor_value, 2))
+            result = round(sensor_value, 2)
 
         else:
 
@@ -372,40 +380,22 @@ class Ui_AutoGrow_Averages(object):
     def update_temperature_current(self):
 
         db_entry = database.get_most_recent_value("temperature")
-        timestamp = db_entry[0]
-        sensor_value = db_entry[1]
-
-        self.temperature_current.setText(self.validate_sensor_value(timestamp, sensor_value))
+        self.update_text(self.temperature_current, self.validate_sensor_value(db_entry))
 
     def update_temperature_6hour(self):
 
         value = database.get_average_value("temperature", 6)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.temperature_6hour_avg.setText(str(value))
+        self.update_text(self.temperature_6hour_avg, value)
 
     def update_temperature_12hour(self):
 
         value = database.get_average_value("temperature", 12)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.temperature_12hour_avg.setText(str(value))
+        self.update_text(self.temperature_12hour_avg, value)
 
     def update_temperature_24hour(self):
 
         value = database.get_average_value("temperature", 24)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.temperature_24hour_avg.setText(str(value))
+        self.update_text(self.temperature_24hour_avg, value)
 
 
     # Updating humidity values
@@ -418,41 +408,23 @@ class Ui_AutoGrow_Averages(object):
 
     def update_humidity_current(self):
 
-        db_entry = database.get_most_recent_value("humidity")
-        timestamp = db_entry[0]
-        sensor_value = db_entry[1]
-
-        self.humidity_current.setText(self.validate_sensor_value(timestamp, sensor_value))
+        query_result = database.get_most_recent_value("humidity")
+        self.update_text(self.humidity_current, self.validate_sensor_value(query_result))
 
     def update_humidity_6hour(self):
 
         value = database.get_average_value("humidity", 6)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.humidity_6hour_avg.setText(str(value))
+        self.update_text(self.humidity_6hour_avg, value)
 
     def update_humidity_12hour(self):
 
         value = database.get_average_value("humidity", 12)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.humidity_12hour_avg.setText(str(value))
+        self.update_text(self.humidity_12hour_avg, value)
 
     def update_humidity_24hour(self):
 
         value = database.get_average_value("humidity", 24)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.humidity_24hour_avg.setText(str(value))
+        self.update_text(self.humidity_24hour_avg, value)
 
 
     # Updating co2 values
@@ -465,42 +437,33 @@ class Ui_AutoGrow_Averages(object):
 
     def update_co2_current(self):
 
-        db_entry = database.get_most_recent_value("co2")
-        timestamp = db_entry[0]
-        sensor_value = db_entry[1]
-
-        self.co2_current.setText(self.validate_sensor_value(timestamp, sensor_value))
+        query_result = database.get_most_recent_value("co2")
+        self.update_text(self.co2_current, self.validate_sensor_value(query_result))
 
     def update_co2_6hour(self):
 
         value = database.get_average_value("co2", 6)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.co2_6hour_avg.setText(str(value))
+        self.update_text(self.co2_6hour_avg, value)
 
     def update_co2_12hour(self):
 
         value = database.get_average_value("co2", 12)
-        if value is not None:
-            value = round(value, 2)
-        else:
-            value = "Invalid"
-
-        self.co2_12hour_avg.setText(str(value))
+        self.update_text(self.co2_12hour_avg, value)
 
     def update_co2_24hour(self):
 
         value = database.get_average_value("co2", 24)
-        if value is not None:
+        self.update_text(self.co2_24hour_avg, value)
+
+    @staticmethod
+    def update_text(ui_component, value: Union[int, float, str]):
+
+        if value is not None and type(value) is not str:
             value = round(value, 2)
         else:
             value = "Invalid"
 
-        self.co2_24hour_avg.setText(str(value))
-
+        ui_component.setText(str(value))
 
     def update_output_states(self):
 
